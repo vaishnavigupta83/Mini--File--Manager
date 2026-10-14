@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f6fb">
+    <title>Mini File Manager</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="page">
+        <header class="page-header">
+            <div class="brand-icon" aria-hidden="true">📁</div>
+            <div><p class="eyebrow">YOUR LOCAL WORKSPACE</p><h1>Mini File Manager</h1>
+                <p class="subtitle">Create and browse simple text files on this computer.</p></div>
+        </header>
+
+        <div class="layout">
+            <section class="card" aria-labelledby="create-heading">
+                <div class="section-heading"><div><p class="eyebrow">NEW FILE</p><h2 id="create-heading">Create a file</h2></div><span class="heading-icon" aria-hidden="true">＋</span></div>
+                <form id="createForm">
+                    <label for="filename">File name</label>
+                    <input id="filename" name="filename" type="text" placeholder="Example: notes.txt" autocomplete="off" required maxlength="255">
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" placeholder="Write something to save…" required></textarea>
+                    <button class="primary-button" type="submit">Create file <span aria-hidden="true">→</span></button>
+                </form>
+                <p id="message" class="message" role="status" aria-live="polite"></p>
+            </section>
+
+            <section class="card" aria-labelledby="files-heading">
+                <div class="section-heading"><div><p class="eyebrow">SAVED LOCALLY</p><h2 id="files-heading">My files <span id="fileCount" class="count">0</span></h2></div>
+                    <button id="refreshButton" class="icon-button" type="button" aria-label="Refresh file list" title="Refresh">↻</button></div>
+                <ul id="fileList" class="file-list" aria-live="polite"><li class="empty-state">Loading files…</li></ul>
+            </section>
+        </div>
+
+        <section class="card system-card" aria-labelledby="system-heading">
+            <div class="section-heading"><div><p class="eyebrow">RUNTIME</p><h2 id="system-heading">System information</h2></div>
+                <button id="systemButton" class="secondary-button" type="button">Show details</button></div>
+            <div id="systemInfo" class="system-info" hidden></div>
+        </section>
+        <footer>Files are stored in this project's <code>data</code> folder.</footer>
+    </main>
+    <dialog id="filePreview" class="preview-dialog" aria-labelledby="previewTitle">
+        <div class="preview-heading"><div><p class="eyebrow">FILE PREVIEW</p><h2 id="previewTitle"></h2></div>
+            <button id="closePreview" class="icon-button" type="button" aria-label="Close preview">×</button></div>
+        <pre id="previewContent"></pre>
+    </dialog>
+    <script src="/app1.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "minifilemanager",
+  "version": "1.0.0",
+  "description": "A small file manager built with Node.js core modules, HTML, CSS, and browser JavaScript. It creates text files in the project's `data` directory, lists them, and lets you preview their contents.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
